@@ -1,15 +1,11 @@
     //Parallax Scrolling
-  	$('section[data-type="background"]').each(function(){
-        var $bgobj = $(this);
+  	$('section[data-type="bgimg"]').each(function(){
+        var $bgimg = $(this);
         $(window).scroll(function() {
-
-            var yPos = -($(window).scrollTop() / $bgobj.data('speed')); 
-             $bgobj.addClass("yay");
-            // Put together our final background position
-            var coords = '50%'+ yPos + 'px';
- 
-            $bgobj.css({ backgroundPosition: coords });
-
+            var y = -($(window).scrollTop()/$bgimg.data('scrollspd'));
+            var coords = '50%'+ y + 'px'; 
+            $bgimg.addClass("scrolling");
+            $bgimg.css({ backgroundPosition: coords });
         }); 
     });
 
